@@ -96,7 +96,7 @@ if __name__ == '__main__':
     while True:
         # print(psutil.pid_exists(pid))
         try:
-            cpu_usage_i = process.cpu_percent()
+            cpu_usage_i = process.cpu_percent() / psutil.cpu_count()
             memory_info = process.memory_info()
             memory_usage_i = memory_info.rss / (1024 * 1024)
             time_track_i = time.time() - start_time
